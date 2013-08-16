@@ -20,6 +20,10 @@ public class BowlingGameTest extends TestCase {
 		g.roll(5);
 	}
 
+	private void rollStrike() {
+		g.roll(10);
+	}
+
 	public void testGutterGame() throws Exception {
 		rollMany(20, 0);
 		assertEquals(0, g.score());
@@ -38,7 +42,7 @@ public class BowlingGameTest extends TestCase {
 	}
 
 	public void testOneStrike() throws Exception {
-		g.roll(10); // strike
+		rollStrike();
 		g.roll(3);
 		g.roll(4);
 		rollMany(16, 0);
